@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      .button,
+      .button:link,
+      .button:visited {
+        position: relative;
+        display: inline-block;
+        padding: 20px 40px;
+        border-radius: 30px;
+        background-color: #52c9bf;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        box-sizing: border-box;
+        border: none;
+        transition: all 0.2s;
+        user-select: none;
+      }
+
+      .button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgb(0 0 0 / 20%);
+      }
+
+      .button:hover::after {
+        transform: scaleX(1.5) scaleY(1.6);
+        opacity: 0;
+      }
+
+      .button:hover,
+      .button:focus {
+        outline: none;
+        box-shadow: 0 1px 16px rgb(0 0 0 / 20%);
+      }
+
+      .button::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        transition: all 0.4s;
+      }
+
+      .button--animated {
+        animation: move-in-top 0.5s ease-out 0.75s;
+
+        /* 动画填充模式 处理动画延迟造成的显示异常  */
+        animation-fill-mode: backwards;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <a class="button button--animated">button</a>
+  </body>
+</html>
